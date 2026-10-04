@@ -120,6 +120,41 @@
     width: 100%;
 }
 
+.calculation-loading {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(2px);
+    color: #7C7C7C;
+    font-size: 13px;
+}
+
+.calculation-loader {
+    width: 18px;
+    height: 18px;
+    border: 3px solid rgba(249, 115, 22, 0.25);
+    border-top-color: #F97316;
+    border-radius: 50%;
+    animation: calculation-spin 0.8s linear infinite;
+}
+
+@keyframes calculation-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .calculation-loader {
+        animation-duration: 1.8s;
+    }
+}
+
 .main-result {
     border: 1px solid rgba(0, 0, 0, 0.08);
     background: rgba(255, 255, 255, 0.75);
